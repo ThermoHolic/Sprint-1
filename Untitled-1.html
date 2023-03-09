@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora financeira ThermoHolic</title>
+</head>
+
+<body>
+    <div id="div_estilizacao" style="text-align: center;">
+
+        Informe o valor da sua produção mensal de cerveja<br>
+        <input id="valor_producao" type="number"><br> <br>
+
+        Informe o valor estimado da perda da sua produção mensalmente <br>
+        <input id="valor_perda" type="number"><br><br>
+
+        Informe o valor do preço que é vendido o produto<br>
+        <input id="valor_preco" type="number"><br><br>
+
+        <button onclick="calcular()">Calcular o valor de economia</button>
+    </div> <br><br><br>
+
+    <div id="div_mensagem" style="text-align: center;color: red;"></div>
+</body>
+
+</html>
+<script>
+    function calcular() {
+        var producao = Number(valor_producao.value)
+        var perda = Number(valor_perda.value)
+        var preco = Number(valor_preco.value)
+        var total = ((perda * 100) / producao)
+        var porcentagem = ((total * 100)/ 12 )
+        var resultado = porcentagem * preco
+        var lucro = producao * preco 
+
+        div_mensagem.innerHTML = `a sua produção mensal foi de ${producao}, e teve uma perda de ${perda} ao mes <br> com os nossos sensores, voce deixará de perder ${total.toFixed(2)}% ao mes <br>
+        isso levaria a aumentar sua captação anual em ${ porcentagem.toFixed(2)}%<br>
+        tendo um lucro de R$${lucro} anualmente`
+    }
+</script>
