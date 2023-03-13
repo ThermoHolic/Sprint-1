@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora financeira ThermoHolic</title>
+</head>
+
+<body>
+    <div id="div_estilizacao" style="text-align: center;">
+
+        Informe o valor da sua produção mensal de cerveja<br>
+        <input id="valor_producao" type="number"><br> <br>
+
+        Informe o valor estimado da perda da sua produção mensalmente <br>
+        <input id="valor_perda" type="number"><br><br>
+
+        Informe o valor do preço que é vendido o produto<br>
+        <input id="valor_preco" type="number"><br><br>
+        
+        informe se a sua cerveja é Lager: <br>
+        <input id="input_larger" type="button"><br><br>
+
+        informe se a sua cerveja é ale:<br>
+        <input id="input_ale" type="button"><br><br>
+
+        Informe a quantidade de litros do tanque da sua cervejaria<br>
+        <input id="valor_lidros" type="number"><br><br>
+
+        Informe quantos tanques de fermentação tem na sua cervejaria<br>
+        <input id="quantidades_tanque"type="number"><br><br>
+
+
+        <button onclick="calcular()">Calcular o valor de economia</button>
+    </div> <br><br><br>
+
+    <div id="div_mensagem" style="text-align: center;color: red;"></div>
+</body>
+
+</html>
+<script>
+    function calcular() {
+        var producao = Number(valor_producao.value)
+        var perda = Number(valor_perda.value)
+        var preco = Number(valor_preco.value)
+        var litros = Number(valor_lidros.value)
+        var litron_anuais = litris * 12
+        var larger = input_larger.value
+        var ale = input_ale.value
+        var quantidade_tanques = NUmber(quantidades_tanque.value)
+        var litros_tanques = (quantidade_tanques * litros )
+        var total = ((perda * 100) / producao)
+        var porcentagem = ((total * 100)/ 12 )
+        var resultado = porcentagem * preco
+        var lucro = producao * preco 
+        var larger_total = 
+
+        if(input_larger == Lager){
+           
+        }
+
+        div_mensagem.innerHTML = `a sua produção mensal foi de ${producao}, e teve uma perda de ${perda} ao mes, o estilo da sua cerveja é larger, 
+
+        na sua fabrica tem ${quantidade_tanques}, em cada um desses tanques tem ${litros}, produzindo uma quantidade de ${litros_tanques}
+        
+        <br> com os nossos sensores, voce deixará de perder ${total.toFixed(2)}% ao mes <br>
+
+        isso em um total de ${litros_tanques}
+
+        isso levaria a aumentar sua captação anual em ${ porcentagem.toFixed(2)}%<br>
+        tendo um lucro de R$${lucro} anualmente, economizando um total de ${litron_anuais}
+        `
+    }
+</script>

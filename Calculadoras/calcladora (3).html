@@ -1,0 +1,96 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora financeira ThermoHolic</title>
+</head>
+
+<body>
+    <div id="div_estilizacao" style="text-align: center;">
+
+        Informe o valor da sua produção mensal de cerveja em litros<br>
+        <input id="valor_producao" type="number"><br> <br>
+
+        Informe o valor estimado da perda da sua produção em litros mensalmente <br>
+        <input id="valor_perda" type="number"><br><br>
+
+        Informe o valor do preço que é vendido o litro do produto<br>
+        <input id="valor_preco" type="number"><br><br>
+
+        Quantos tanques de fermentação tem em sua cervejaria ?<br>
+        <input id="quant_tanque" type="number"><br><br>
+
+        quantidade de litros que cabem nestes tanques ?<br>
+        <input id="quantidade_litros" type="number"><br><br>
+
+        <button onclick="Larger()">cerveja Larger</button>
+        <button onclick="ale()">Cerveja Ale</button>
+    </div> <br><br><br>
+
+    <div id="div_mensagem" style="text-align: center;color: red;"></div>
+</body>
+
+</html>
+<script>
+    function Larger() {
+        var producao = Number(valor_producao.value)
+
+        var perda = Number(valor_perda.value)
+
+        var preco = Number(valor_preco.value)
+
+        var tanques = Number(quant_tanque.value)
+
+        var litros = Number(quantidade_litros.value)
+
+        var total = ((perda * 100) / producao)
+
+        var porcentagem = ((total * 100)/ 12 )
+
+        var perda_litros = ( perda / tanques)
+
+        var resultado = porcentagem * preco
+
+        var lucro = producao * preco 
+
+        
+
+        div_mensagem.innerHTML = `A sua produção mensal foi de ${producao} L, e teve uma perda de ${perda} L ao mês. <br>
+         Com os nossos sensores, você deixará de perder tanto em forma monetária, pois hoje você esta perdendo ${total.toFixed(2)}% da sua produção, como também está perdendo tempo, pois uma cerveja Larger demora cerca de 7 dias em media para fermentar da melhor forma possível sem que sua cerveja perca tanto em gosto tanto quanto em personalidade. <br>
+         Você tem ${tanques} tanques em sua cervejaria, e em cada cabem ${litros} litros, você vem perdendo em media ${perda_litros} litros por tanque.<br>
+
+        Se junte a nossa empresa e venha aumentar sua captação em ${ porcentagem.toFixed(2)}%<br>
+        tendo um lucro de R$${lucro} anualmente`
+    }
+
+    function ale(){
+        var producao = Number(valor_producao.value)
+
+var perda = Number(valor_perda.value)
+
+var preco = Number(valor_preco.value)
+
+var tanques = Number(quant_tanque.value)
+
+var litros = Number(quantidade_litros.value)
+
+var total = ((perda * 100) / producao)
+
+var porcentagem = ((total * 100)/ 12 )
+
+var perda_litros = ( perda * tanques) / litros
+
+var resultado = porcentagem * preco
+
+var lucro = producao * preco 
+
+
+
+div_mensagem.innerHTML = `A sua produção mensal foi de ${producao} L, e teve uma perda de ${perda} L ao mês. <br>
+ Com os nossos sensores, você deixará de perder tanto em forma monetária, pois hoje você esta perdendo ${total.toFixed(2)}% da sua produção, como também esta perdendo tempo, pois uma cerveja Ale demora cerca de 4 dias em media para fermentar da melhor forma possível sem que sua cerveja perca tanto em gosto tanto quanto em personalidade. <br>
+ Você tem ${tanques} tanques em sua cervejaria, e em cada cabem ${litros} litros, você vem perdendo em media ${perda_litros} por tanque em media.<br>
+
+Se junte a nossa empresa e venha aumentar sua captação em ${ porcentagem.toFixed(2)}%<br>
+tendo um lucro de R$${lucro} anualmente`
+    }
+</script>

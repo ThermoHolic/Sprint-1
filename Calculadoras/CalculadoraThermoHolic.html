@@ -82,34 +82,7 @@
        <script>
        
            function Ale(){
-               // 1 tanque = 4 dias
-       
-               var tanques= Number(qtd_tanques.value)
-               var produçãoLitros= Number(input_produção.value)
-               var perda= Number(input_perda.value)
-               var valorLitro= Number (input_valorLitro.value)
-               var precoPacote= Number(input_pacote.value)
-               var litrosPorPacote= Number(input_litrosPacote.value)
-       
-       
-               var totalLitros= tanques * produçãoLitros //são quantos litros totais produzidos dentro da cervejaria
-               var porcentagemPerda= (perda * 100) / totalLitros // o que ele perde, multiplicado por 100, dividido pelo total (para descobrir a porcentagem) 
-               var perdaPacote= (perda / litrosPorPacote) * precoPacote
-               var dinheiro= perda * valorLitro
-              
-               
-               div_mensagem.innerHTML= `Na sua cervejaria artesanal você produz ${totalLitros} litros, 
-               porém por conta da falta de controle eficiente e automatizado, você perde ${porcentagemPerda}% da sua produção. <br>
-               Em relação à perda financeira, você acaba perdendo R$${perdaPacote}, a mais do que você gastaria, com gastos em relação aos pacotes de fermento, além disso, por deixar de vender os litros perdidos, 
-               você deixará de receber R$${dinheiro} que iria ser originado através das vendas dos litos de cerveja. <br>
-               Já em relação à perda de tempo, você possui um défict de 4 dias de atraso por lote ou tanque perdido. <br>
-               É por isso, que temos a solução perfeita para você, venha monitorar e receber alertas referente à sua produção
-               antes que o problema aconteça! Garantimos 95% de eficiência da nossa solução. `
-       
-           }
-       
-            function Larger(){
-               // 1 tanque= 7 dias
+               // 1 tanque = 7 dias
        
                var tanques= Number(qtd_tanques.value)
                var produçãoLitros= Number(input_produção.value)
@@ -130,6 +103,33 @@
                Em relação à perda financeira, você acaba perdendo R$${perdaPacote}, a mais do que você gastaria, com gastos em relação aos pacotes de fermento, além disso, por deixar de vender os litros perdidos, 
                você deixará de receber R$${dinheiro} que iria ser originado através das vendas dos litos de cerveja. <br>
                Já em relação à perda de tempo, você possui um défict de 7 dias de atraso por lote ou tanque perdido. <br>
+               É por isso, que temos a solução perfeita para você, venha monitorar e receber alertas referente à sua produção
+               antes que o problema aconteça! Garantimos 95% de eficiência da nossa solução. `
+       
+           }
+       
+            function Larger(){
+               // 1 tanque= 4 dias
+       
+               var tanques= Number(qtd_tanques.value)
+               var produçãoLitros= Number(input_produção.value)
+               var perda= Number(input_perda.value)
+               var valorLitro= Number (input_valorLitro.value)
+               var precoPacote= Number(input_pacote.value)
+               var litrosPorPacote= Number(input_litrosPacote.value)
+       
+       
+               var totalLitros= tanques * produçãoLitros //são quantos litros totais produzidos dentro da cervejaria
+               var porcentagemPerda= (perda * 100) / totalLitros // o que ele perde, multiplicado por 100, dividido pelo total (para descobrir a porcentagem) 
+               var perdaPacote= (perda / litrosPorPacote) * precoPacote
+               var dinheiro= perda * valorLitro
+              
+               
+               div_mensagem.innerHTML= `Na sua cervejaria artesanal você produz ${totalLitros} litros, 
+               porém por conta da falta de controle eficiente e automatizado, você perde ${porcentagemPerda}% da sua produção. <br>
+               Em relação à perda financeira, você acaba perdendo R$${perdaPacote}, a mais do que você gastaria, com gastos em relação aos pacotes de fermento, além disso, por deixar de vender os litros perdidos, 
+               você deixará de receber R$${dinheiro} que iria ser originado através das vendas dos litos de cerveja. <br>
+               Já em relação à perda de tempo, você possui um défict de 4 dias de atraso por lote ou tanque perdido. <br>
                É por isso, que temos a solução perfeita para você, venha monitorar e receber alertas referente à sua produção
                antes que o problema aconteça! Garantimos 95% de eficiência da nossa solução. `
            }

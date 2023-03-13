@@ -13,7 +13,7 @@
 #define LUMIPIN A0 
 #define CHAVPIN 7 
 
-DHT dht(DHTPIN, DHT11); 
+ DHT dht(DHTPIN, DHT11); 
 
  void setup()
  {   
@@ -27,28 +27,32 @@ DHT dht(DHTPIN, DHT11);
  
   float dht11_umidade = dht.readHumidity();
   float dht11_temperatura = dht.readTemperature(); 
-  Serial.print(dht11_umidade);  
-  Serial.print(";");  
-  Serial.print(dht11_temperatura); 
-  Serial.print(";");  
+  // Serial.print(dht11_umidade);  
+  // Serial.print(";");  
+ // Serial.print(dht11_temperatura); 
+ // Serial.print(";");  
   
-  float luminosidade =  analogRead(LUMIPIN); 
-  Serial.print(luminosidade); 
-  Serial.print(";"); 
-  float lm35_temperatura = analogRead(LM35PIN);
+   float luminosidade =  analogRead(LUMIPIN); 
+  // Serial.print(luminosidade); 
+  //  Serial.print(";"); 
+ 
+ float lm35_temperatura = analogRead(LM35PIN);
   lm35_temperatura = lm35_temperatura * 0.00488; 
   lm35_temperatura = lm35_temperatura * 100;
-  Serial.print(lm35_temperatura); 
-  Serial.print(";"); 
+   Serial.print(lm35_temperatura); 
+   Serial.print(";"); 
 
    int chave = digitalRead(7); 
-   if (chave == 0)   
-   {       Serial.print("1");    
-   } 
+   // if (chave == 0)   
+   //{       
+   // Serial.print("1");    
+  // }
+  // } 
    
-   else    
-   {       Serial.print("0");   
-   }   
+  //  else    
+  // {  
+    // Serial.print("0");   
+  // }   
    Serial.println();
    } 
   
